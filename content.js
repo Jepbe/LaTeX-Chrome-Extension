@@ -6,18 +6,24 @@ function addButtonToImages() {
         const button = document.createElement('button');
         button.innerText = "Copy LaTeX";
         button.addEventListener("click", () => {
-            var textToCopy = img.alt;
-            textToCopy.select();
-            textToCopy.setSelectionRange(0,9999);
-            console.log(textToCopy)
+            
+            var textToCopy = img.getAttribute('alt');
+            
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    console.log("LaTeX code copied to clipboard: ", textToCopy)
+                })
+                .catch(err => {
+                    console.log("Failed to copy LaTeX code: ", err)
+                });
 
-            navigator.clipboard.writeText(textToCopy);
             console.log("button clicked image", img.alt);
         });
 
         img.parentNode.insertBefore(button, img.nextSibling);
     });
 }
+
 
 const css = `
     button {
@@ -34,5 +40,6 @@ const css = `
 const style = document.createElement('style');
 style.textContent = css;
 document.head.appendChild(style);
+
 
 addButtonToImages();
