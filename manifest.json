@@ -10,19 +10,9 @@
 
 
     },
-    "content_scripts": [
-        {
-            "js": [
-                "content-script.js"
-            ],
-            "css": [
-                "content.css"
-            ],
-            "matches": [
-                "<all_urls>"
-            ]
-        }
-    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "action": {
         "default_title": "LaTeX Chrome Extension",
         "default_popup": "popup.html"
