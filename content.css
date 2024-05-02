@@ -1,0 +1,9 @@
+button {
+    display: block;
+    padding: 8px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    z-index: 1000;
+}

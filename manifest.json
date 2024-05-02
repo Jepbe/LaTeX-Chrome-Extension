@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "LaTeX-Chrome-Extension",
+    "version": "0.1.0",
+    "author": "Jeppe Bøgeskov",
+    "description": "Chrome extension for copying LaTeX snippets from Systime.dk",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "icons": {
+
+
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content-script.js"
+            ],
+            "css": [
+                "content.css"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "action": {
+        "default_title": "LaTeX Chrome Extension",
+        "default_popup": "popup.html"
+    }
+}
